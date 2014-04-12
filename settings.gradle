@@ -1,0 +1,2 @@
+include ':animtabsview'
+include ':animtabsview.demo'
