@@ -10,6 +10,23 @@ android {
     compileSdkVersion 19
     buildToolsVersion "19.0.3"
 
+    signingConfigs {
+        wuyexiong {
+            storeFile file("wuyexiong.keystore")
+            storePassword "xx"
+            keyAlias "xx"
+            keyPassword "xx"
+        }
+    }
+
+    buildTypes {
+        release {
+            runProguard true
+            proguardFile 'proguard-project.txt'
+            signingConfig signingConfigs.wuyexiong
+        }
+    }
+
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
