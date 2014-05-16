@@ -1,0 +1,23 @@
+language: android
+android:
+    components:
+    - build-tools-19.0.3
+    #- android-19
+    #- sysimg-19
+    #- extra-android-support
+#env:
+#  matrix:
+#    - ANDROID_SDKS=android-19,sysimg-19  ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
+before_install:
+# for gradle output style
+    - export TERM=dumb
+    # environment info
+    #- mvn -version
+    #- ./gradle -v
+    - uname -a
+    #- echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+    #- emulator -avd test -no-skin -no-audio -no-window &
+# Let's try to build...
+script: ./gradlew clean build
+
+#gradle build connectedCheck
